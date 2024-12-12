@@ -1,1 +1,3 @@
-This is a read me file
+This is a website used to run my Handyman business...
+
+I'm a noob to web dev as I'm sure that is completely obvious!
