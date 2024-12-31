@@ -1,75 +1,187 @@
-/*
- * CSS boilerplate
- */
-
-/* Box sizing rules */
-*,
-*::before,
-*::after {
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Remove list styles on ul/ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
+/* Body Styles */
 body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  /*font-family: Arial, sans-serif;*/
+  /*font-family: 'PT Sans', sans-serif;*/
+  font-family: 'Merriweather', serif;
+  line-height: 1.6;
+  background-color: #e1e1e1;
+  color: #444;
+  /*text-align: center;*/
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+/* Header logo container */
+.header-logo-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
 }
 
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
+.header-logo-wrapper img {
+  width: 100%;
+  height: auto;
   display: block;
 }
 
-/* Inherit fonts for inputs and textareas */
-input,
-textarea,
-select {
-  font: inherit;
+/* Header Tagline and Contact Info */
+.header-tagline {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.9em;
+  margin-top: 20px;
 }
 
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+#email-question,
+#email-container {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+#email-container {
+  font-size: 1.0em;
+}
+
+a[href^="mailto:"] {
+  color: #444;
+  /* Overrides default link color */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .header-tagline {
+    font-size: 1em;
+  }
+
+  #email-question,
+  #email-container {
+    font-size: 1em;
+  }
+}
+
+/* Basic Layout for Flexbox */
+.summary-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allows the columns to stack on smaller screens */
+  gap: 20px;
+  /* Space between columns */
+  /*margin: 0 20px;*/
+
+  /* Center align and limit width like the previous div */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Centers the container */
+  padding: 10px;
+
+}
+
+/* Flexbox styles */
+.flex-item {
+  flex: 1;
+  /* Ensures equal column width */
+  min-width: 300px;
+  /* Prevents columns from shrinking too small */
+  text-align: left;
+  /* Aligns all text to the left */
+}
+
+.flex-item img {
+  max-width: 100%;
+  /* Ensures images fit within their container */
+  height: auto;
+}
+
+.summary-services-column,
+.summary-about-me-column {
+  flex: 1;
+  /* Each column takes equal width */
+  padding: 20px;
+  font-size: 1.2em;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+  font-size: 2.9em;
+  line-height: 1.0;
+  margin-top: 10px;
+}
+
+.services-tagline {
+  margin-bottom: 10px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+  font-size: 2.9em;
+  line-height: 1.0;
+  margin-top: 10px;
+}
+
+h3 {
+  /*font-family: 'Merriweather', serif;*/
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+  margin-top: 15px;
+}
+
+/* Styles for the left column */
+.summary-services-column ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+
+/* Styling for the right column */
+
+.summary-about-me-column ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.summary-about-me-column .about-image {
+  width: 60%;
+  height: auto;
+  margin-top: 20px;
+}
+
+footer p {
+  /*font-family: 'Merriweather', serif;*/
+  font-family: 'PT Sans', sans-serif;
+  text-align: center;
+  font-size: 0.8em;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.spacer {
+  display: inline-block;
+  width: 160px;
+  /* Adjust as needed */
+}
+
+/* Mobile view: Stack columns vertically */
+@media (max-width: 768px) {
+  .summary-container {
+    flex-direction: column;
+  }
+
+  .summary-services-column,
+  .summary-about-me-column {
+    flex: none;
+    /* No flexible width, columns will take 100% width */
+    margin-bottom: 20px;
+    /* Add space between the sections */
   }
 }
